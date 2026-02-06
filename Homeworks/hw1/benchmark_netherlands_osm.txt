@@ -1,0 +1,109 @@
+========================================================
+BENCHMARK STARTING: netherlands_osm.mtx
+System: 4 Sockets, 15 Cores/Socket (Total 60 Threads)
+Runs per config: 5
+========================================================
+
+########################################################
+>>> MODE: BASELINE (No Preprocessing)
+########################################################
+--------------------------------------------------------
+Threads: 1 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 1.427823 s | GFLOPS: 0.341953 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 1.562560 s | GFLOPS: 0.312467 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 1.420041 s | GFLOPS: 0.343826 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 1.437389 s | GFLOPS: 0.339677 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 1.408123 s | GFLOPS: 0.346736 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=1, COMPACT (Socket 0)): Avg Time = 1.451187 s | Avg GFLOPS = .3369 | Avg PreProc = 0 s
+--------------------------------------------------------
+Threads: 2 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.837148 s | GFLOPS: 0.583228 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 0.853685 s | GFLOPS: 0.571930 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 0.817066 s | GFLOPS: 0.597562 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 0.853800 s | GFLOPS: 0.571852 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 0.828274 s | GFLOPS: 0.589476 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=2, COMPACT (Socket 0)): Avg Time = .837994 s | Avg GFLOPS = .5828 | Avg PreProc = 0 s
+--------------------------------------------------------
+Threads: 4 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.499723 s | GFLOPS: 0.977037 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 0.493924 s | GFLOPS: 0.988508 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 0.475510 s | GFLOPS: 1.026787 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 0.449801 s | GFLOPS: 1.085474 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 0.504289 s | GFLOPS: 0.968190 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=4, COMPACT (Socket 0)): Avg Time = .484649 s | Avg GFLOPS = 1.0091 | Avg PreProc = 0 s
+--------------------------------------------------------
+Threads: 8 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.267395 s | GFLOPS: 1.825942 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 0.279217 s | GFLOPS: 1.748629 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 0.278833 s | GFLOPS: 1.751041 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 0.269717 s | GFLOPS: 1.810220 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 0.266265 s | GFLOPS: 1.833689 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=8, COMPACT (Socket 0)): Avg Time = .272285 s | Avg GFLOPS = 1.7939 | Avg PreProc = 0 s
+--------------------------------------------------------
+Threads: 16 | Strategy: SCATTER (4 Sockets: 4x4)
+  [Run 1] Time: 0.236176 s | GFLOPS: 2.067300 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 0.234873 s | GFLOPS: 2.078777 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 0.210602 s | GFLOPS: 2.318338 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 0.176013 s | GFLOPS: 2.773927 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 0.229201 s | GFLOPS: 2.130214 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=16, SCATTER (4 Sockets: 4x4)): Avg Time = .217373 s | Avg GFLOPS = 2.2737 | Avg PreProc = 0 s
+--------------------------------------------------------
+Threads: 16 | Strategy: BALANCED (2 Sockets: 8x8)
+  [Run 1] Time: 0.227330 s | GFLOPS: 2.147744 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 2] Time: 0.244801 s | GFLOPS: 1.994464 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 3] Time: 0.239416 s | GFLOPS: 2.039324 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 4] Time: 0.241395 s | GFLOPS: 2.022605 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+  [Run 5] Time: 0.232336 s | GFLOPS: 2.101468 | Checksum: 34473772621491446003913440886784.000000 | PreProc: 0 s
+>>> RESULT (spmv_base, T=16, BALANCED (2 Sockets: 8x8)): Avg Time = .237055 s | Avg GFLOPS = 2.0611 | Avg PreProc = 0 s
+
+########################################################
+>>> MODE: OPTIMIZED (RCM / Degree Sort)
+########################################################
+--------------------------------------------------------
+Threads: 1 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.874437 s | GFLOPS: 0.558357 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.871571 s
+  [Run 2] Time: 0.991504 s | GFLOPS: 0.492431 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.889538 s
+  [Run 3] Time: 0.874283 s | GFLOPS: 0.558455 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.757404 s
+  [Run 4] Time: 0.856268 s | GFLOPS: 0.570204 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.748057 s
+  [Run 5] Time: 1.909395 s | GFLOPS: 0.255708 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.869082 s
+>>> RESULT (spmv_opt, T=1, COMPACT (Socket 0)): Avg Time = 1.101177 s | Avg GFLOPS = .4870 | Avg PreProc = .827130 s
+--------------------------------------------------------
+Threads: 2 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.975633 s | GFLOPS: 0.500442 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 1.26939 s
+  [Run 2] Time: 0.506140 s | GFLOPS: 0.964649 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.728394 s
+  [Run 3] Time: 0.853022 s | GFLOPS: 0.572374 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 1.09201 s
+  [Run 4] Time: 0.506460 s | GFLOPS: 0.964040 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.696373 s
+  [Run 5] Time: 0.498023 s | GFLOPS: 0.980372 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.581424 s
+>>> RESULT (spmv_opt, T=2, COMPACT (Socket 0)): Avg Time = .667855 s | Avg GFLOPS = .7963 | Avg PreProc = .873518 s
+--------------------------------------------------------
+Threads: 4 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.260631 s | GFLOPS: 1.873328 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.515669 s
+  [Run 2] Time: 0.260802 s | GFLOPS: 1.872101 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.532648 s
+  [Run 3] Time: 0.485904 s | GFLOPS: 1.004824 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.87936 s
+  [Run 4] Time: 0.510124 s | GFLOPS: 0.957115 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.952011 s
+  [Run 5] Time: 0.528475 s | GFLOPS: 0.923880 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.97132 s
+>>> RESULT (spmv_opt, T=4, COMPACT (Socket 0)): Avg Time = .409187 s | Avg GFLOPS = 1.3262 | Avg PreProc = .770201 s
+--------------------------------------------------------
+Threads: 8 | Strategy: COMPACT (Socket 0)
+  [Run 1] Time: 0.155788 s | GFLOPS: 3.134054 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.537838 s
+  [Run 2] Time: 0.155501 s | GFLOPS: 3.139836 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.524543 s
+  [Run 3] Time: 0.155737 s | GFLOPS: 3.135080 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.464418 s
+  [Run 4] Time: 0.155638 s | GFLOPS: 3.137076 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.476783 s
+  [Run 5] Time: 0.155758 s | GFLOPS: 3.134665 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.534306 s
+>>> RESULT (spmv_opt, T=8, COMPACT (Socket 0)): Avg Time = .155684 s | Avg GFLOPS = 3.1361 | Avg PreProc = .507577 s
+--------------------------------------------------------
+Threads: 16 | Strategy: SCATTER (4 Sockets: 4x4)
+  [Run 1] Time: 0.096474 s | GFLOPS: 5.060912 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.629664 s
+  [Run 2] Time: 0.111683 s | GFLOPS: 4.371739 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.583943 s
+  [Run 3] Time: 0.112233 s | GFLOPS: 4.350319 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.586515 s
+  [Run 4] Time: 0.112126 s | GFLOPS: 4.354473 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.657469 s
+  [Run 5] Time: 0.101095 s | GFLOPS: 4.829590 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.639193 s
+>>> RESULT (spmv_opt, T=16, SCATTER (4 Sockets: 4x4)): Avg Time = .106722 s | Avg GFLOPS = 4.5934 | Avg PreProc = .619356 s
+--------------------------------------------------------
+Threads: 16 | Strategy: BALANCED (2 Sockets: 8x8)
+  [Run 1] Time: 0.121045 s | GFLOPS: 4.033596 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.539757 s
+  [Run 2] Time: 0.121618 s | GFLOPS: 4.014601 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.602188 s
+  [Run 3] Time: 0.121683 s | GFLOPS: 4.012464 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.60528 s
+  [Run 4] Time: 0.121242 s | GFLOPS: 4.027053 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.531512 s
+  [Run 5] Time: 0.121662 s | GFLOPS: 4.013151 | Checksum: 34473772621493161875371469045760.000000 | PreProc: 0.589481 s
+>>> RESULT (spmv_opt, T=16, BALANCED (2 Sockets: 8x8)): Avg Time = .121450 s | Avg GFLOPS = 4.0201 | Avg PreProc = .573643 s

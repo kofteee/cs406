@@ -1,0 +1,43 @@
+# Ignore CMake build directories
+code/cmake-build-debug/
+code/cmake-build-release/
+code/build/
+code/.idea/
+code/.vscode/
+build/
+code/out/
+
+.vscode/
+.vs/
+code/CMakeSettings.json
+
+datasets/*/*
+code/results/*
+code/*results*
+
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+ConTree
+
+# C/C++ shared libraries
+*.so
+*.dll
+*.dylib
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# IDE specific
+.idea/
+*.swp
+*.swo
+*~
+build_cpu/

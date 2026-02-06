@@ -1,0 +1,22 @@
+use valgrind to find memory leaks, invalid accesses
+g++ -g for debug mode
+g++ -E to see preprocessor output (testdefine.cpp) - or use ./cpp
+g++ -c to create object files (f1.cpp)
+g++ [object files to link] (f1.o f2.cpp)
+
+preprocessing: cpp file.c > file.i (cannot install stdlib - use -E as above)
+create assembly code: g++ -S file.i (optimization.cpp - also try with --fast-math)
+assembly to machine code: as -o file.o file.s (you can see the symbols with nm file.o)
+linker: g++ -o file file.o 
+
+for static library example:
+create the obj file: g++ -c staticlib.cpp
+create the lib: ar rvs staticlib.a staticlib.o
+use the lib to compile the main file: g++ testlib.cpp staticlib.a
+
+for shared library:
+1) g++ -c staticlib.cpp
+2) g++ -shared -o libstatic.so staticlib.o
+3) g++ testlib.cpp -lstatic -L your library folder
+4) try running... why did not it run?
+5) make the runtime find the library for you... 

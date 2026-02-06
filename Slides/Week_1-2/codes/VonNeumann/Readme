@@ -1,0 +1,12 @@
+
+1) test it with perf:
+   - perf stat ./a.out 5
+   - or perf stat -e L1-dcache-loads,L1-dcache-load-misses,L1-dcache-stores ./a.out 5
+   - or perf stat -e dTLB-loads,dTLB-load-misses,dTLB-prefetch-misses ./a.out 5
+   - or perf stat -e LLC-loads,LLC-load-misses,LLC-stores,LLC-prefetches ./a.out 5
+
+Extra) getconf -a | grep CACHE
+       likwid-topology
+       gives you cache level information
+       
+

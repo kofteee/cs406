@@ -1,0 +1,2 @@
+1) compile and test with -O0
+2) use perf stat to see the misprediction ratio, instructions, instruction per cycle
